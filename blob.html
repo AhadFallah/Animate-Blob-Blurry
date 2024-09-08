@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .animation-2{
+        animation-delay:2s;
+      }
+      .animation-4{
+        animation-delay:4s;
+      }
+ .animation-6{
+        animation-delay:6s;
+      }
+   }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            blob: "blob 15s infinite"
+          },
+          keyframes: {
+            blob: {
+              "0%": {
+                transform: "translate(0px,0px) scale(1)"
+              },
+              "33%": {
+                transform: "translate(30px,-50px) scale(1.1)"
+              },
+              "66%": {
+                transform: "translate(-20px,20px) scale(0.9)"
+              },
+              "100%": {
+                transform: "translate(0px,0px) scale(1)"
+              },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+</head>
+
+<body>
+  <div class="flex items-center justify-center h-screen px-16 ">
+    <div class="relative w-full h-52 max-w-sm ">
+      <div
+        class="absolute top-0 left-20  w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-blob animation-6">
+      </div>
+      <div
+        class="absolute top-40 left-40 w-72 h-72 bg-yellow-500 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-blob animation-4">
+      </div>
+      <div
+        class="absolute top-10 left-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-blob animation-2">
+      </div>
+    </div>
+    <div>
+      <h1 class="text-xl font-bold">Animated Blob</h1>
+
+
+      <p class="text-justify mt-4">
+        An animated blurry blob made with HTML <br>
+        and Tailwind CSS, featuring smooth motion <br>
+        and a soft, abstract look. Code available <br>
+        on my GitHub.
+      </p>
+
+    </div>
+  </div>
+</body>
+
+</html>
